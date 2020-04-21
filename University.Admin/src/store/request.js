@@ -1,7 +1,6 @@
 import axios from 'axios';
 import { API_URL } from '@config';
-import { } from './types';
-import { getToken, redirectToLogin } from '@store/auth/actions';
+import { getToken, redirectToLogin } from '@store/auth';
 
 const xhrClient = axios.create({
   baseURL: API_URL,
@@ -14,6 +13,8 @@ export const methods = {
   PUT: 'PUT',
   DEL: 'DELETE',
 };
+
+// Thunks
 
 export const request = ({
   loadingAction = () => ({}),
@@ -66,6 +67,27 @@ export const request = ({
 const _handleError = ({ error, message }) => dispatch => {
   // TODO: Toast message and log error.
 };
+
+// Types
+
+// Pure Actions
+
+// Reducer
+
+const initialState = {
+
+};
+
+export default (state = initialState, { type, payload  }) => {
+  switch (type) {
+    default:
+      return state;
+  }
+};
+
+// Selectors
+
+
 
 function validateConfig(config) {
   if (!config) throw new Error('Config object not provided.');

@@ -9,7 +9,7 @@
       "@pages/*": ["src/pages/*"],
       "@controls/*": ["src/components/shared/controls/*"],
       "@layouts/*": ["src/components/layouts/*"],
-      "@request": ["src/store/request/actions.js"]
+      "@request": ["src/store/request/request.js"]
     }
   },
   "exclude": ["node_modules", "config"]

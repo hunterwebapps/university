@@ -3,9 +3,9 @@ import { connectRouter, routerMiddleware } from 'connected-react-router';
 import { createBrowserHistory } from 'history';
 import thunk from 'redux-thunk';
 
-import authReducer from './auth/reducer';
-import requestReducer from './request/reducer';
-import snackbarReducer from './snackbar/reducer';
+import authReducer from './auth';
+import requestReducer from './request';
+import snackbarReducer from './snackbar';
 
 export const history = createBrowserHistory();
 

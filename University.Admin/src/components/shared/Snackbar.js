@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { selectSnack } from '@/store/snackbar/reducer';
+import { selectSnack } from '@store/snackbar';
+import { popSnacks } from '@store/snackbar';
 
 import { Snackbar as MaterialSnackbar, IconButton } from '@material-ui/core';
 import { Close as CloseIcon } from '@material-ui/icons';
-import { popSnacks } from '@/store/snackbar/actions';
 
 const mapStateToProps = state => ({
   snack: selectSnack(state),

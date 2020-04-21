@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
-import { selectUser } from '@/store/auth/reducer';
+import { selectUser } from '@store/auth';
 
 import {
   AppBar,
