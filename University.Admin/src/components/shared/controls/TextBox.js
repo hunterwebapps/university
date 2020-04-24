@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Field } from 'formik';
-import { Input, InputLabel, FormControl } from '@material-ui/core';
+import { Input, InputLabel, FormControl, FormHelperText } from '@material-ui/core';
 
 export default function TextBox({
   id,
@@ -16,7 +16,7 @@ export default function TextBox({
         const showError = !!meta.error && meta.touched;
         id = id || name;
         return (
-          <FormControl>
+          <FormControl error={showError}>
             <InputLabel htmlFor={id}>
               {label}
             </InputLabel>
@@ -27,10 +27,12 @@ export default function TextBox({
               {...field}
               {...rest}
             />
-            {showError && <div>{meta.error}</div>}
+            {showError && <FormHelperText>{meta.error}</FormHelperText>}
           </FormControl>
         );
       }}
     </Field>
   )
 }
+
+export { TextBox };

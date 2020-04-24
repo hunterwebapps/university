@@ -7,7 +7,10 @@ import { push } from 'connected-react-router';
 export const getToken = () => (dispatch, getState) => {
   const { token } = getState().auth;
 
-  if (!token) return null;
+  if (!token) {
+
+    return null
+  };
 
   const tokenDetails = parseJwt(token);
 
@@ -137,3 +140,5 @@ export default (state = initialState, { type, payload  }) => {
 // Selectors
 
 export const selectUser = state => state.auth.user;
+
+export const selectLoading = state => state.auth.loading;

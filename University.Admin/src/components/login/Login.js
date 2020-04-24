@@ -1,19 +1,20 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { login } from '@store/auth';
+import { login, selectLoading } from '@store/auth';
 
 import LoginForm from './LoginForm';
 
 const mapStateToProps = state => ({
+  loading: selectLoading(state),
 });
 
 const mapDispatchToProps = {
   login,
 };
 
-function Login({ login, success }) {
+function Login({ login, loading }) {
   return (
-    <LoginForm onSubmit={login} />
+    <LoginForm onSubmit={login} loading={loading} />
   );
 }
 

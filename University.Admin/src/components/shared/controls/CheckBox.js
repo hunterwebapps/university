@@ -27,3 +27,5 @@ export default function CheckBox({
     </Field>
   )
 }
+
+export { CheckBox };

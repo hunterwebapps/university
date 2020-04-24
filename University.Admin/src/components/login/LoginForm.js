@@ -3,18 +3,19 @@ import { Form, withFormik } from 'formik';
 import * as Yup from 'yup';
 import { makeStyles } from '@material-ui/core/styles';
 
-import TextBox from '@components/shared/controls/TextBox';
-import CheckBox from '@components/shared/controls/CheckBox';
-import { Button } from '@material-ui/core';
+import TextBox from '@controls/TextBox';
+import CheckBox from '@controls/CheckBox';
+import Button from '@controls/Button';
 import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles(theme => ({
-  cancelButton: {
-    float: 'right',
+  actions: {
+    display: 'flex',
+    justifyContent: 'space-between',
   },
 }));
 
-function LoginForm() {
+function LoginForm({ isSubmitting }) {
   const classes = useStyles();
 
   return (
@@ -39,21 +40,25 @@ function LoginForm() {
           label="Remember Me"
         />
       </div>
-      <Button
-        type="submit"
-        color="primary"
-        variant="contained"
-      >
-        Login
-      </Button>
-      <Button
-        variant="outlined"
-        component={Link}
-        to="/"
-        className={classes.cancelButton}
-      >
-        Cancel
-      </Button>
+      <div className={classes.actions}>
+        <Button
+          type="submit"
+          color="secondary"
+          variant="contained"
+          loading={isSubmitting}
+        >
+          Login
+        </Button>
+        <Button
+          variant="outlined"
+          color="primary"
+          component={Link}
+          to="/"
+          disabled={isSubmitting}
+        >
+          Cancel
+        </Button>
+      </div>
     </Form>
   );
 }
